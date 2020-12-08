@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './App.css';
 
 function App() {
@@ -6,6 +7,16 @@ function App() {
       <h1>Cinque</h1>
     </div>
   );
+=======
+import React from 'react'
+
+export default function App() {
+    return (
+        <div>
+            Hello World
+        </div>
+    )
+>>>>>>> main
 }
 
-export default App;
+
