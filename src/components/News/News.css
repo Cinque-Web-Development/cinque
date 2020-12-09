@@ -1,0 +1,16 @@
+.NewsComp {
+    font-family: 'Bitter', serif;
+}
+
+.news-link {
+    text-decoration: none;
+    color: black;
+}
+
+.news-link:hover, .news-link:focus {
+    text-decoration: underline;
+}
+
+.loading {
+    font-family: 'Bitter', serif;
+}
