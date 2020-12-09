@@ -17,12 +17,15 @@ export default function News() {
 
     
     let newsComp = allNews.length ? (
-      <div>
-          {allNews.map(n => <a href={n.url} key={n.publishedAt}><h2>{n.title}</h2></a>)}
+      <div className="NewsComp">
+        <h1>Top U.S. Stories</h1>
+          {allNews.map(n => 
+            <a href={n.url} key={n.publishedAt} className="news-link"><h2>{n.title}</h2></a>
+          )}
       </div>
     ) : (
       <>
-      <h1>Loading</h1>
+      <h1 className="loading">News Loading</h1>
       </>
     )
       
