@@ -5,12 +5,10 @@ import {fetchNews} from "../../services/news-api";
 
 export default function News() {
   const [allNews, setAllNews] = useState([]);
-  const [displayNews, setDisplayNews] = useState([])
 
   async function getNews() {
     const newsResults = await fetchNews();
-    setAllNews(newsResults.data.articles);
-    setDisplayNews(allNews.slice(0,4));
+    setAllNews(newsResults.data.articles.slice(0,5));
   }
   
   useEffect(() => {
@@ -18,9 +16,9 @@ export default function News() {
   }, [])
 
     
-    let newsComp = displayNews.length ? (
+    let newsComp = allNews.length ? (
       <div>
-          {displayNews.map(n => <a href={n.url} key={n.publishedAt}><h2>{n.title}</h2></a>)}
+          {allNews.map(n => <a href={n.url} key={n.publishedAt}><h2>{n.title}</h2></a>)}
       </div>
     ) : (
       <>
