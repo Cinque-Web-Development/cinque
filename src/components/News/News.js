@@ -4,22 +4,23 @@ import "./News.css";
 import {fetchNews} from "../../services/news-api";
 
 export default function News() {
-  const [news, setNews] = useState([]);
+  const [allNews, setAllNews] = useState([]);
+  const [displayNews, setDisplayNews] = useState([])
 
   async function getNews() {
     const newsResults = await fetchNews();
-    setNews(newsResults.data.articles);
+    setAllNews(newsResults.data.articles);
+    setDisplayNews(allNews.slice(0,4));
   }
   
   useEffect(() => {
     getNews();
-    console.log(news);
   }, [])
 
     
-    let newsComp = news.length ? (
+    let newsComp = displayNews.length ? (
       <div>
-          News component
+          {displayNews.map(n => <a href={n.url} key={n.publishedAt}><h2>{n.title}</h2></a>)}
       </div>
     ) : (
       <>
