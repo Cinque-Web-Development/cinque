@@ -4,7 +4,7 @@ import "./NavBar.css";
 export default function NavBar() {
     return (
         <div>
-            <h1>Cinque</h1>
+            <h1 className="cinque">Cinque</h1>
         </div>
     )
 }
