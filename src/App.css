@@ -1,3 +1,11 @@
 h1 {
     margin: 0;
-  }
+}
+
+body {
+  margin: 0;
+  padding: 5px;
+  box-sizing: border-box;
+  color: #81d8f7;
+  background-color: rgb(27,51,107);
+}
