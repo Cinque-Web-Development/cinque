@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./News.css";
 
 import {fetchNews} from "../../services/news-api";
+import Loader from "../Loader/Loader";
 
 export default function News() {
   const [allNews, setAllNews] = useState([]);
@@ -25,7 +26,7 @@ export default function News() {
       </div>
     ) : (
       <>
-      <h1 className="loading">News Loading</h1>
+        <Loader />
       </>
     )
       

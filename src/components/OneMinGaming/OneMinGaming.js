@@ -4,6 +4,7 @@ import "./OneMinGaming.css";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 
 import {fetchTweets} from "../../services/twitter-api";
+import Loader from "../Loader/Loader";
 
 export default function OneMinGaming() {
 const [currentTweet, setCurrentTweet] = useState("");
@@ -25,7 +26,7 @@ useEffect(() => {
                     tweetId={currentTweet}
                 />
             :
-                <h3>Loading</h3>
+                <Loader />
             }
         </div>
     )

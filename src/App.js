@@ -2,6 +2,7 @@ import React from 'react'
 
 import News from "./components/News/News";
 import OneMinGaming from "./components/OneMinGaming/OneMinGaming";
+import Weather from "./components/Weather/Weather";
 
 export default function App() {
     return (
@@ -9,6 +10,7 @@ export default function App() {
             Hello World
             <News />
             <OneMinGaming />
+            <Weather />
         </div>
     )
 }
