@@ -10,6 +10,7 @@ import APODComp from './components/APOD/APODComp';
 export default function App() {
     return (
         <div>
+            <NavBar />
             <News />
             <OneMinGaming />
             <Weather />
