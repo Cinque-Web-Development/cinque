@@ -3,3 +3,25 @@
     font-size: 3rem;
     margin: 0;
 }
+
+.nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 0 0 10px black;
+    margin-bottom: 20px;
+    height: 120px;
+}
+
+.cinque-nav {
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.holiday {
+    grid-column: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
