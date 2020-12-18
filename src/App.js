@@ -15,8 +15,8 @@ export default function App() {
             <Weather />
             <News />
             </div>
-            <OneMinGaming />
             <APODComp />
+            <OneMinGaming />
         </div>
     )
 }

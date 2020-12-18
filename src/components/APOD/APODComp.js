@@ -27,7 +27,7 @@ export default function APODComp() {
 
 
     return (
-        <div>
+        <div className="apod-comp">
            <APOD title={title} picture={picture} description={description} />
         </div>
     )
