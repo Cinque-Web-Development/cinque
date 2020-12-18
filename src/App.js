@@ -11,9 +11,9 @@ export default function App() {
     return (
         <div>
             <NavBar />
+            <Weather />
             <News />
             <OneMinGaming />
-            <Weather />
             <APODComp />
         </div>
     )
