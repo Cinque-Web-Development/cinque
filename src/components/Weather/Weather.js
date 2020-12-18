@@ -9,7 +9,7 @@ export default function Weather() {
 
   const getWeather = async () => {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=dallas&appid=${API_KEY}&units=imperial`,
+      `https://api.openweathermap.org/data/2.5/weather?q=lafayette&appid=${API_KEY}&units=imperial`,
     );
     const data = await response.json();
     setWeather(data);

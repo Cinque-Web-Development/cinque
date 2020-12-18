@@ -1,3 +1,8 @@
+.news-section {
+    grid-column: 2/3;
+    padding: 15px;
+}
+
 .NewsComp {
     font-family: 'Bitter', serif;
 }

@@ -32,6 +32,8 @@ export default function News() {
       
 
     return (
-      newsComp
+      <div className="news-section">
+        {newsComp}
+      </div>
     )
 }
