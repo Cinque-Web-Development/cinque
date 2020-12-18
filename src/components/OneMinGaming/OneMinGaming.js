@@ -19,7 +19,7 @@ useEffect(() => {
   }, [])
 
     return (
-        <div>
+        <div className="game-news">
             <h1>One Minute Gaming News</h1>
             {currentTweet ?
                 <TwitterTweetEmbed
