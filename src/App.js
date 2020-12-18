@@ -11,8 +11,10 @@ export default function App() {
     return (
         <div>
             <NavBar />
+            <div className="weather-news-section">
             <Weather />
             <News />
+            </div>
             <OneMinGaming />
             <APODComp />
         </div>
