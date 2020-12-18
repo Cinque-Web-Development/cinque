@@ -1,0 +1,19 @@
+.apod {
+    text-align: center;
+    margin: 10px;
+    padding-top: 5px;
+}
+
+.apod-title {
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 5px;
+}
+
+.apod-pic {
+    width: 100%;
+}
+
+.apod-descrip {
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
