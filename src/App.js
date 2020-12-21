@@ -6,6 +6,7 @@ import News from "./components/News/News";
 import OneMinGaming from "./components/OneMinGaming/OneMinGaming";
 import Weather from "./components/Weather/Weather";
 import APODComp from './components/APOD/APODComp';
+import Reddit from './components/Reddit/Reddit';
 
 export default function App() {
     return (
@@ -17,6 +18,7 @@ export default function App() {
             </div>
             <APODComp />
             <OneMinGaming />
+            <Reddit />
         </div>
     )
 }
