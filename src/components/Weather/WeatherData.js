@@ -7,7 +7,6 @@ import Fog from '../../Assets/fog2.jpg';
 import Snow from '../../Assets/snow3.jpg'
 
 export default function WeatherData({
-  img,
   name,
   weather,
   description,
