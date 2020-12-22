@@ -1,5 +1,5 @@
 .news-section {
-    grid-column: 2/3;
+    grid-row: 2/3;
     padding: 15px;
 }
 
@@ -18,4 +18,11 @@
 
 .loading {
     font-family: 'Bitter', serif;
+}
+
+@media only screen and (min-width: 950px) {
+    .news-section { 
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
 }
