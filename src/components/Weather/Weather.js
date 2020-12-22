@@ -7,7 +7,6 @@ export default function Weather() {
   const [weather, setWeather] = useState({cod: "400"});
   const [lat, setLat] = useState(null);
   const [lon, setLon] = useState(null)
-  const [error, setError] = useState('')
 
   const getWeather = async () => {
     const response = await fetch(
@@ -24,7 +23,7 @@ export default function Weather() {
         setLon(position.coords.longitude)
         getWeather()
       }, 
-      (err) => setError("Error")
+      (err) => console.log(err)
     )
   }
   
