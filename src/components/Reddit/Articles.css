@@ -1,4 +1,21 @@
+.article {
+    margin: 10px 0;
+}
+
 .reddit {
     text-decoration: none;
-    color: #81d8f7;
+    color: rgb(27,51,107);
+    text-align: center;
+}
+
+.reddit:hover, .reddit:focus {
+    text-decoration: underline;
+}
+
+.reddit-title {
+    margin: 0;
+}
+
+.subreddit {
+    color:rgb(252, 54, 23);
 }

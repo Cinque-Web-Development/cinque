@@ -13,13 +13,13 @@ export default function App() {
         <div>
             <NavBar />
             <div className="weather-news-section">
-            <Weather />
-            <News />
+                <Weather />
+                <News />
             </div>
             <APODComp />
             <div className="gaming-reddit">
-            <OneMinGaming />
-            <Reddit />
+                <OneMinGaming />
+                <Reddit />
             </div>
         </div>
     )

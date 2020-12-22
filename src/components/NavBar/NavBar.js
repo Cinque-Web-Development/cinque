@@ -6,7 +6,7 @@ import axios from 'axios';
 export default function NavBar() {
     const [date, setDate] = useState("")
     const [name, setName] = useState()
-    const [time, setTime] = useState()
+    // const [time, setTime] = useState()
 
     useEffect(() => {
         const getHoliday = () => {
@@ -31,9 +31,9 @@ export default function NavBar() {
             <h1 className="cinque">Cinque</h1>
             </div>
             <div className="holiday">
-                <p>Next Holiday:</p>
-                <h1>{name}</h1>
-                <h1>{date}</h1>
+                <h2>Next Holiday:</h2>
+                <h1 className="holiday-display">{name}</h1>
+                <h1 className="holiday-display">{date}</h1>
             </div>
         </div>
     )

@@ -5,7 +5,6 @@ import axios from 'axios'
 import APOD from './APOD';
 
 const API_KEY=process.env.REACT_APP_API_KEY
-console.log(API_KEY)
 
 export default function APODComp() {
     const [picture, setPicture] = useState()

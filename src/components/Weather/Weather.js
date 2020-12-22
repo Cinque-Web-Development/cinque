@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import './Weather.css';
 import WeatherData from './WeatherData';
 import Loader from '../Loader/Loader';
 const API_KEY=process.env.REACT_APP_WEATHER_API_KEY;
