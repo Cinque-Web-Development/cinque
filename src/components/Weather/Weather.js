@@ -5,7 +5,7 @@ import Loader from '../Loader/Loader';
 const API_KEY=process.env.REACT_APP_WEATHER_API_KEY;
 
 export default function Weather() {
-  const [weather, setWeather] = useState();
+  const [weather, setWeather] = useState({cod: "400"});
   const [lat, setLat] = useState(null);
   const [lon, setLon] = useState(null)
   const [error, setError] = useState('')
@@ -13,9 +13,9 @@ export default function Weather() {
   const getWeather = async () => {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`,
-    );
-    const data = await response.json();
-    setWeather(data);
+    )
+     .then(res => res.json())
+    setWeather(response);
   };
 
   const getLocation = () => {
@@ -23,21 +23,21 @@ export default function Weather() {
       (position) => {
         setLat(position.coords.latitude)
         setLon(position.coords.longitude)
+        getWeather()
       }, 
       (err) => setError("Error")
     )
   }
-
+  
   useEffect(() => {
     getLocation()
-    getWeather()
-  }, [])
+  }, [lon])
 
 
 
   return (
     <>
-      {weather ? (
+      {weather.cod !== "400" ? (
         <div>
           <WeatherData 
            key={weather.id}
