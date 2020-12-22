@@ -16,7 +16,6 @@ export default function APODComp() {
         const getAPOD = () => {
             axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&concept_tags=true`)
             .then(response => {
-                console.log(response.data)
                 setPicture(response.data.url)
                 setDescription(response.data.explanation)
                 setTitle(response.data.title)    
