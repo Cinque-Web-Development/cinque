@@ -11,6 +11,8 @@ export default function Weather() {
 
  
 
+  
+ 
  
   
   useEffect(() => {
@@ -31,7 +33,8 @@ export default function Weather() {
          () => console.log("Error")
        )
      }
-    getLocation()
+     getLocation()
+     getWeather()
   }, [lat, lon])
 
 
