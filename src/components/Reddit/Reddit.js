@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import './Reddit.css';
 import Article from './Article';
+import Loader from '../Loader/Loader';
 
 export default function Reddit() {
     const [articles, setArticle] = useState();
-    const [links, setLinks] = useState('');
-    const [subReddit, setSubReddit] = useState('')
+    
    
 
 
@@ -16,26 +16,28 @@ export default function Reddit() {
                 console.log("Error")
                 return;
             }
-            res.json().then((response) => {
-                response.data.children.map((item) => {
-                    console.log(item.data)
-                    setArticle(item.data.title)
-                    setLinks(item.data.permalink)
-                    setSubReddit(item.data.subreddit)
-                })
-            })
+        res.json().then((response) => {
+            setArticle(response.data.children)
+        })
         })
     }, [])
 
     console.log(articles)
-    console.log(links)
-    console.log(subReddit)
+    // console.log(links)
+    // console.log(subReddit)
+
+    const getArticles = articles ? articles.map((article) => 
+        <Article  article={article.data.title} link={article.data.permalink} subReddit={article.data.subReddit} />      
+    ) : <Loader />
     
 
-    console.log(articles)
+   
     return (
-        <div> 
-            <Article articles={articles} links={links} subReddit={subReddit} />      
-        </div>
+        
+          <div>
+              {getArticles}
+          </div>  
     )
+
 }
+
