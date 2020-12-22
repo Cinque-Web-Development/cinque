@@ -7,30 +7,32 @@ export default function Weather() {
   const [weather, setWeather] = useState({cod: "400"});
   const [lat, setLat] = useState(null);
   const [lon, setLon] = useState(null)
-  const [error, setError] = useState('')
+ 
 
-  const getWeather = async () => {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`,
-    )
-     .then(res => res.json())
-    setWeather(response);
-  };
+ 
 
-  const getLocation = () => {
-   window.navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setLat(position.coords.latitude)
-        setLon(position.coords.longitude)
-        getWeather()
-      }, 
-      (err) => setError("Error")
-    )
-  }
+ 
   
   useEffect(() => {
+    const getWeather = async () => {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`,
+      )
+       .then(res => res.json())
+      setWeather(response);
+    };
+    const getLocation = () => {
+      window.navigator.geolocation.getCurrentPosition(
+         (position) => {
+           setLat(position.coords.latitude)
+           setLon(position.coords.longitude)
+           getWeather()
+         }, 
+         () => console.log("Error")
+       )
+     }
     getLocation()
-  }, [lon])
+  }, [lat, lon])
 
 
 
