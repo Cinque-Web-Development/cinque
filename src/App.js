@@ -17,8 +17,10 @@ export default function App() {
             <News />
             </div>
             <APODComp />
+            <div className="gaming-reddit">
             <OneMinGaming />
             <Reddit />
+            </div>
         </div>
     )
 }

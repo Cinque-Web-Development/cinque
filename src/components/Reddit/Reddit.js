@@ -11,7 +11,7 @@ export default function Reddit() {
 
 
     useEffect(() => {
-        fetch(`https://www.reddit.com/r/${subReddits}.json?&limit=10`)
+        fetch(`https://www.reddit.com/r/${subReddits}.json?&limit=7`)
         .then(res => {
             if(res.status !== 200) {
                 console.log("Error")
@@ -38,18 +38,23 @@ export default function Reddit() {
    
     return (
         
-          <div>
-              <form>
+          <div className="reddit-section">
+              <h1 className="reddit-logo"><i className="reddit-logo fab fa-reddit-alien fa-2x"></i>Subreddits</h1>
+              <form >
             <select 
             onChange={handleChange}
             name="dropdown"
             style={{display: "block"}}
             value={subReddits}
+            className="doprdown-form"
             >
             <option value=""></option>
             <option value="webdev">Web Dev</option>
             <option value="reactjs">React JS</option>
-            <option value="software">Software</option>
+            <option value="softwareengineering">Software Engineering</option>
+            <option value="javascript">JavaScript</option>
+            <option value="technology">Technology</option>
+           
             </select>
               </form>
               {getArticles}
