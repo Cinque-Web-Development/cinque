@@ -7,12 +7,7 @@ export default function Weather() {
   const [weather, setWeather] = useState({cod: "400"});
   const [lat, setLat] = useState(null);
   const [lon, setLon] = useState(null)
- 
 
- 
-
-  
- 
  
   
   useEffect(() => {
