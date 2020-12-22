@@ -1,0 +1,16 @@
+.reddit-section {
+    grid-column: 2/3;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dropdown-form {
+    width: 85%;
+}
+
+.reddit-logo {
+    color:rgb(252, 54, 23)
+}
