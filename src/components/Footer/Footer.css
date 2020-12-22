@@ -1,0 +1,42 @@
+.footer-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: 'Patua One', sans-serif;
+}
+
+.cinque-section {
+    grid-column: 1/2;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.cinque-web {
+    text-decoration: none;
+    color: #81d8f7;
+}
+
+.cinque-web:hover {
+    color: white;
+}
+
+.social-links {
+    grid-column: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    margin: 10px;
+}
+
+.cinque-social {
+    text-decoration: none;
+    color: #81d8f7;
+}
+
+.cinque-social:hover {
+    color: white;
+}
