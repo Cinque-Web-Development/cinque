@@ -1,15 +1,22 @@
 .footer-section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     font-family: 'Patua One', sans-serif;
+    padding: 12px 0 12px 15px;
 }
 
 .cinque-section {
     grid-column: 1/2;
     display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cinque-section h3 {
+    margin: 0;
 }
 
 .cinque-web {
@@ -22,7 +29,7 @@
 }
 
 .social-links {
-    grid-column: 3/4;
+    grid-column: 2/3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,4 +46,10 @@
 
 .cinque-social:hover {
     color: white;
+}
+
+@media only screen and (min-width: 750px) {
+    .footer-section { grid-template-columns: 1fr 1fr 1fr; }
+
+    .social-links { grid-column: 3/4; }
 }

@@ -76,8 +76,8 @@ useEffect(() => {
       <div className="weather-content">
         <h1>{name}</h1>
         <h4>{description}</h4>
-        <h4>Temp: {temperature} &deg;F</h4>
-        <h4>Feels Like: {feelsLike} &deg;F</h4>
+        <h4>Temp: <span className="weather-light">{temperature}&deg; F</span></h4>
+        <h4>Feels Like: <span className="weather-light">{feelsLike}&deg; F</span></h4>
       </div>
     </div>
   );
