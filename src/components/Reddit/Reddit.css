@@ -1,6 +1,6 @@
 .reddit-section {
     grid-column: 2/3;
-    padding: 10px;
+    padding: 10px 20px;
     align-self: start;
     display: flex;
     align-items: center;
