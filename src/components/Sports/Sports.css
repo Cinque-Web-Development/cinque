@@ -1,0 +1,25 @@
+.sports-nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.logo:hover, .logo:focus {
+    cursor: pointer;
+}
+
+.nba {
+    height: 90px;
+}
+
+.nfl {
+    height: 80px;
+}
+
+.mlb {
+    height: 75px;
+}
+
+.pga {
+    height: 105px;
+}
