@@ -14,7 +14,6 @@ export default function Sports() {
     const [games, setGames] = useState();
 
     async function getGames(id) {
-        console.log(id);
         const gamesResults = await fetchSports(id);
         setGames(gamesResults.data.events.slice(0,10));
     }
@@ -24,7 +23,7 @@ export default function Sports() {
     }, [])
 
     return (
-        <div>
+        <div className="sports-comp">
             <nav className="sports-nav">
                 <img className="nba logo" src={nba} alt="NBA Logo" onClick={(e) => getGames(4387)}/>
                 <img className="nfl logo" src={nfl} alt="NFL Logo" onClick={(e) => getGames(4391)}/>
@@ -34,10 +33,9 @@ export default function Sports() {
             {games ? (
                 <div>
                     {games[0].idLeague === "4425" ? (
-                        <div>Golf</div>
+                        <div className="scores">Golf</div>
                     ) : (
                         <div className="scores">
-                            Other Scores
                             {games.map(g => {
                                 return <ScoreCard 
                                         homeTeam={g.strHomeTeam} 
@@ -54,7 +52,7 @@ export default function Sports() {
             ) : (
                 <Loader />
             )}
-
+            <div className="line"></div>
         </div>
     )
 }

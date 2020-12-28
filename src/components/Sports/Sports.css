@@ -1,4 +1,12 @@
+.sports-comp {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .sports-nav {
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -8,18 +16,35 @@
     cursor: pointer;
 }
 
-.nba {
-    height: 90px;
+.nba { height: 90px; }
+
+.nfl { height: 80px; }
+
+.mlb { height: 75px; }
+
+.pga { height: 105px; }
+
+.scores {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
-.nfl {
-    height: 80px;
+.ScoreCard {
+    background-color: #81d8f7;
+    color: rgb(27,51,107);
+    border-radius: 5%;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Tomorrow', sans-serif;
 }
 
-.mlb {
-    height: 75px;
-}
+.ScoreCard h2, .ScoreCard h3, .ScoreCard h4 { margin: 0; }
 
-.pga {
-    height: 105px;
+.ScoreCard h2 { 
+    font-size: 0.8rem;
+    text-align: center;
 }
