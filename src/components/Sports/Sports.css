@@ -24,6 +24,11 @@
 
 .pga { height: 105px; }
 
+.current { 
+    border: 1px solid whitesmoke;
+    border-radius: 5%;
+}
+
 .scores {
     display: flex;
     flex-flow: row wrap;
