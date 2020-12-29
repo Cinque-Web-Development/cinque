@@ -9,6 +9,13 @@ body {
   background-color: rgb(27,51,107);
 }
 
+.line {
+  width: 98%;
+  height: 1px;
+  background-color: #81d8f7;
+  margin: 15px 0;
+}
+
 .weather-news-section {
   display: grid;
   grid-template-rows: 1fr 1fr;
