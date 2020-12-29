@@ -3,6 +3,7 @@ import "./Sports.css";
 
 import Loader from "../Loader/Loader";
 import ScoreCard from "./ScoreCard";
+import GolfCard from './GolfCard';
 import {fetchSports} from "../../services/sports-api";
 
 import nba from "../../Assets/nba.png";
@@ -16,7 +17,8 @@ export default function Sports() {
 
     async function getGames(e, id) {
         const gamesResults = await fetchSports(id);
-        setGames(gamesResults.data.events.slice(0,10));
+        console.log(gamesResults.data.events)
+        setGames(gamesResults.data.events);
         if (e) {
             for (let i = 0; i < logoElements.length; i++) {
                 if (logoElements[i].classList.contains("current")) {
@@ -47,7 +49,16 @@ export default function Sports() {
             {games ? (
                 <div>
                     {games[0].idLeague === "4425" ? (
-                        <div className="scores">Golf</div>
+                        <div className="scores">
+                            {games.map(g => {
+                                return <GolfCard 
+                                tourney={g.strEvent}
+                                date={g.dateEvent}
+                                city={g.strCity}
+                                result={g.strResult.slice(87,130)}
+                                />
+                            })}
+                        </div>
                     ) : (
                         <div className="scores">
                             {games.map(g => {

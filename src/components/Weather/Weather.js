@@ -23,13 +23,12 @@ export default function Weather() {
          (position) => {
            setLat(position.coords.latitude)
            setLon(position.coords.longitude)
-           getWeather()
          }, 
          () => console.log("Error")
        )
      }
-     getLocation()
-     getWeather()
+    //  getLocation()
+    //  getWeather()
   }, [lat, lon])
 
 
