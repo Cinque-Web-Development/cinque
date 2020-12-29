@@ -10,7 +10,7 @@ export default function NavBar() {
 
     useEffect(() => {
         const getHoliday = () => {
-            axios.get(`https://calendarific.com/api/v2/holidays?api_key=095aa220667e3028d65999d32d50e9d18786c371&country=US&year=2020&type=national`)
+            axios.get(`https://calendarific.com/api/v2/holidays?api_key=095aa220667e3028d65999d32d50e9d18786c371&country=US&year=2021&type=national`)
         .then(response => {
             setDate(response.data.response.holidays[10].date.iso)
             setName(response.data.response.holidays[10].name)
