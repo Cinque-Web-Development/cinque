@@ -9,6 +9,7 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    flex-flow: row wrap;
     align-items: center;
 }
 
