@@ -21,7 +21,7 @@ export default function News() {
       <div className="NewsComp">
         <h1>Top U.S. Stories</h1>
           {allNews.map(n => 
-            <a href={n.url} key={n.publishedAt} className="news-link"><h2>{n.title}</h2></a>
+            <a target="_blank" rel="noreferrer" href={n.url} key={n.publishedAt} className="news-link"><h2>{n.title}</h2></a>
           )}
       </div>
     ) : (
