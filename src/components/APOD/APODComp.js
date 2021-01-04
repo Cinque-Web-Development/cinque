@@ -9,7 +9,8 @@ const API_KEY=process.env.REACT_APP_API_KEY
 export default function APODComp() {
     const [picture, setPicture] = useState()
     const [description, setDescription] = useState('')
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState('');
+    const [mediaType, setMediaType] = useState('')
 
     useEffect(() => {
         const getAPOD = () => {
@@ -18,6 +19,7 @@ export default function APODComp() {
                 setPicture(response.data.url)
                 setDescription(response.data.explanation)
                 setTitle(response.data.title)    
+                setMediaType(response.data.media_type)
             })
         }
         getAPOD()
@@ -26,7 +28,7 @@ export default function APODComp() {
 
     return (
         <div className="apod-comp">
-           <APOD title={title} picture={picture} description={description} />
+           <APOD media={mediaType} title={title} picture={picture} description={description} />
         </div>
     )
 }

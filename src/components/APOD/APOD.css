@@ -12,6 +12,10 @@
 .apod-pic {
     width: 100%;
 }
+.apod-vid {
+    width: 80%;
+    height: 400px;
+}
 
 .apod-descrip {
     font-size: 1.2rem;
