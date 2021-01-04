@@ -9,7 +9,7 @@ export default function News() {
 
   async function getNews() {
     const newsResults = await fetchNews();
-    setAllNews(newsResults.data.articles.slice(0,5));
+    setAllNews(newsResults.data.hits);
   }
   
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function News() {
       <div className="NewsComp">
         <h1>Top U.S. Stories</h1>
           {allNews.map(n => 
-            <a target="_blank" rel="noreferrer" href={n.url} key={n.publishedAt} className="news-link"><h2>{n.title}</h2></a>
+            <a target="_blank" rel="noreferrer" href={n.url} key={n.pubDate} className="news-link"><h2>{n.title}</h2></a>
           )}
       </div>
     ) : (
