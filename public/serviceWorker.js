@@ -53,6 +53,8 @@ self.addEventListener("fetch", function (event) {
   );
 });
 
+
+
 //Activate the Service Worker
 self.addEventListener("activate", (event) => {
   const cacheWhiteList = [];
@@ -69,3 +71,11 @@ self.addEventListener("activate", (event) => {
     )
   );
 });
+
+if ('serviceWorker' in navigator) {
+  CACHE_NAME.keys().then(function(cacheNames) {
+    cacheNames.forEach(function(cacheName) {
+      CACHE_NAME.delete(cacheName);
+    });
+  });
+}
