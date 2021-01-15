@@ -9,9 +9,14 @@ import Loader from "../Loader/Loader";
 export default function OneMinGaming() {
 const [currentTweet, setCurrentTweet] = useState("");
 
-  async function getTweets() {
+function hasMedia(tweet) {
+    return tweet.attachments
+}
+
+async function getTweets() {
     const tweetResults = await fetchTweets();
-    setCurrentTweet(tweetResults.data.data[0].id);
+    const currentVid = tweetResults.data.data.find(hasMedia);
+    setCurrentTweet(currentVid.id);
 }
 
 useEffect(() => {
