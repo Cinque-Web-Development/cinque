@@ -15,8 +15,11 @@ function hasMedia(tweet) {
 
 async function getTweets() {
     const tweetResults = await fetchTweets();
-    const currentVid = tweetResults.data.data.find(hasMedia);
-    setCurrentTweet(currentVid.id);
+    console.log("tweetResults.data -->", tweetResults.data)
+    if (tweetResults.data.data) {
+        const currentVid = tweetResults.data.data.find(hasMedia);
+        setCurrentTweet(currentVid.id);
+    } else { setCurrentTweet("none") }
 }
 
 useEffect(() => {
@@ -26,11 +29,14 @@ useEffect(() => {
     return (
         <div className="game-news">
             <h1>One Minute Gaming News</h1>
-            {currentTweet ?
+            {currentTweet ? (
+                currentTweet === "none" ? (
+                    <h2>One Minute Gaming News hasn't tweeted lately!</h2>
+                ) : (
                 <TwitterTweetEmbed
                     tweetId={currentTweet}
                 />
-            :
+            )) :
                 <Loader />
             }
         </div>
