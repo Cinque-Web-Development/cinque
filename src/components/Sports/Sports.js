@@ -18,7 +18,6 @@ export default function Sports() {
 
     async function getGames(e, id) {
         const gamesResults = await fetchSports(id);
-        console.log(gamesResults.data.events)
         setGames(gamesResults.data.events);
         if (e) {
             for (let i = 0; i < logoElements.length; i++) {
