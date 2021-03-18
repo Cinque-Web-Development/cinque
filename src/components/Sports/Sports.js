@@ -50,19 +50,21 @@ export default function Sports() {
                 <div>
                     {games[0].idLeague === "4425" ? (
                         <div className="scores">
-                            {games.map(g => {
+                            {games.map((g, idx) => {
                                 return <GolfCard 
-                                tourney={g.strEvent}
-                                date={g.dateEvent}
-                                city={g.strCity}
-                                result={g.strResult.slice(87,130)}
-                                />
+                                        key={idx}
+                                        tourney={g.strEvent}
+                                        date={g.dateEvent}
+                                        city={g.strCity}
+                                        result={g.strResult.slice(87,130)}
+                                        />
                             })}
                         </div>
                     ) : (
                         <div className="scores">
-                            {games.map(g => {
+                            {games.map((g, idx) => {
                                 return <ScoreCard 
+                                        key={idx}
                                         homeTeam={g.strHomeTeam} 
                                         awayTeam={g.strAwayTeam} 
                                         homeScore={g.intHomeScore}

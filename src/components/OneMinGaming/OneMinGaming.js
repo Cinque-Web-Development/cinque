@@ -15,7 +15,6 @@ function hasMedia(tweet) {
 
 async function getTweets() {
     const tweetResults = await fetchTweets();
-    console.log("tweetResults.data -->", tweetResults.data)
     if (tweetResults.data.data) {
         const currentVid = tweetResults.data.data.find(hasMedia);
         setCurrentTweet(currentVid.id);

@@ -12,6 +12,7 @@ export default function NavBar() {
         const getHoliday = () => {
             axios.get(`https://calendarific.com/api/v2/holidays?api_key=${process.env.REACT_APP_CALENDAR_API_KEY}&country=US&year=2021&type=national`)
         .then(response => {
+            console.log(response.data.response)
             setDate(response.data.response.holidays[0].date.iso)
             setName(response.data.response.holidays[0].name)
         })
