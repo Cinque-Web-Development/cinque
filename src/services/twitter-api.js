@@ -6,6 +6,6 @@ const options = {
 };
 
 export function fetchTweets() {
-    return axios.get(`${CORS}https://api.twitter.com/2/tweets/search/recent?query=from:OneMinGameNews&tweet.fields=created_at,attachments&expansions=author_id&media.fields=media_key&user.fields=description`, options)
+    return axios.get(`${CORS}https://api.twitter.com/2/tweets/search/recent?query=from:OMGamingNews&tweet.fields=created_at,attachments&expansions=author_id&media.fields=media_key&user.fields=description`, options)
     .catch((err) => console.log(err));
 }

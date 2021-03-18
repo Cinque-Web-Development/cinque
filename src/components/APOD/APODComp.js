@@ -1,34 +1,20 @@
-
-import React, {useState, useEffect} from 'react';
-import './APODComp.css';
+import React from 'react';
 import axios from 'axios'
+import useSWR from 'swr'
+
+import './APODComp.css';
 import APOD from './APOD';
 
 const API_KEY=process.env.REACT_APP_API_KEY
+const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&concept_tags=true`
+const fetcher = url => axios.get(url).then(res => res.data)
 
 export default function APODComp() {
-    const [picture, setPicture] = useState()
-    const [description, setDescription] = useState('')
-    const [title, setTitle] = useState('');
-    const [mediaType, setMediaType] = useState('')
-
-    useEffect(() => {
-        const getAPOD = () => {
-            axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&concept_tags=true`)
-            .then(response => {
-                setPicture(response.data.url)
-                setDescription(response.data.explanation)
-                setTitle(response.data.title)    
-                setMediaType(response.data.media_type)
-            })
-        }
-        getAPOD()
-    }, [])
-
+    const { data, error } = useSWR(url, fetcher)
 
     return (
         <div className="apod-comp">
-           <APOD media={mediaType} title={title} picture={picture} description={description} />
+           { data && <APOD media={data.media_type} title={data.title} picture={data.url} description={data.explanation} /> }
         </div>
     )
 }
